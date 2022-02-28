@@ -5,8 +5,8 @@
       <PropertyRef Name="CourseID" />
     </Key>
     <Property Name="CourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Ttile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Credits" Type="Int32" />
+    <Property Name="Ttile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Credits" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Tables" Relationship="Self.FK_dbo_Enrollment_dbo_Course_CourseID" FromRole="Course" ToRole="Table" />
   </EntityType>
   <EntityType Name="Student">
@@ -19,6 +19,7 @@
     <Property Name="EnrollmentDate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Tables" Relationship="Self.FK_dbo_Enrollment_dbo_Student_StudentID" FromRole="Student" ToRole="Table" />
     <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
   </EntityType>
   <EntityType Name="Table">
     <Key>
@@ -30,6 +31,8 @@
     <Property Name="StudentID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Course" Relationship="Self.FK_dbo_Enrollment_dbo_Course_CourseID" FromRole="Table" ToRole="Course" />
     <NavigationProperty Name="Student" Relationship="Self.FK_dbo_Enrollment_dbo_Student_StudentID" FromRole="Table" ToRole="Student" />
+    <Property Name="LectureID" Type="Int32" />
+    <NavigationProperty Name="Lecturer" Relationship="SchoolManagement_DBModel.FK_dbo_Enrollment_dbo_Lecturers_LecturerID" FromRole="Table" ToRole="Lecturer" />
   </EntityType>
   <Association Name="FK_dbo_Enrollment_dbo_Course_CourseID">
     <End Role="Course" Type="Self.Course" Multiplicity="1">
@@ -71,5 +74,33 @@
       <End Role="Student" EntitySet="Students" />
       <End Role="Table" EntitySet="Tables" />
     </AssociationSet>
+    <EntitySet Name="Lecturers" EntityType="SchoolManagement_DBModel.Lecturer" />
+    <AssociationSet Name="FK_dbo_Enrollment_dbo_Lecturers_LecturerID" Association="SchoolManagement_DBModel.FK_dbo_Enrollment_dbo_Lecturers_LecturerID">
+      <End Role="Lecturer" EntitySet="Lecturers" />
+      <End Role="Table" EntitySet="Tables" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Lecturer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="First_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Tables" Relationship="SchoolManagement_DBModel.FK_dbo_Enrollment_dbo_Lecturers_LecturerID" FromRole="Lecturer" ToRole="Table" />
+  </EntityType>
+  <Association Name="FK_dbo_Enrollment_dbo_Lecturers_LecturerID">
+    <End Type="SchoolManagement_DBModel.Lecturer" Role="Lecturer" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SchoolManagement_DBModel.Table" Role="Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lecturer">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Table">
+        <PropertyRef Name="LectureID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

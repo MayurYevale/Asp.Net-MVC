@@ -10,6 +10,7 @@ using SchoolManagement.Models;
 
 namespace SchoolManagement.Controllers
 {
+    [Authorize]
     public class CoursesController : Controller
     {
         private SchoolManagement_DBEntities1 db = new SchoolManagement_DBEntities1();
@@ -78,7 +79,7 @@ namespace SchoolManagement.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CourseID,Ttile,Credits")] Course course)
+        public ActionResult Edit([Bind(Include = "CourseID,Title,Credits")] Course course)
         {
             if (ModelState.IsValid)
             {

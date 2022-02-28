@@ -106,3 +106,6 @@ C:\Users\mayur_yevale\Desktop\Asp.Net-MVC\SchoolManagement\obj\Debug\SchoolManag
 C:\Users\mayur_yevale\Desktop\Asp.Net-MVC\SchoolManagement\obj\Debug\SchoolManagement.csproj.CopyComplete
 C:\Users\mayur_yevale\Desktop\Asp.Net-MVC\SchoolManagement\obj\Debug\SchoolManagement.dll
 C:\Users\mayur_yevale\Desktop\Asp.Net-MVC\SchoolManagement\obj\Debug\SchoolManagement.pdb
+C:\Users\mayur_yevale\Desktop\Asp.Net-MVC\SchoolManagement\obj\Debug\SchoolManagement.Migrations.InitialCreate.resources
+C:\Users\mayur_yevale\Desktop\Asp.Net-MVC\SchoolManagement\obj\Debug\SchoolManagement.csproj.GenerateResource.cache
+C:\Users\mayur_yevale\Desktop\Asp.Net-MVC\SchoolManagement\obj\Debug\SchoolManagement.Migrations.AddedDOB.resources

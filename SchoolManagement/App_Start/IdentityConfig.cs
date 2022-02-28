@@ -105,5 +105,15 @@ namespace SchoolManagement
         {
             return new ApplicationSignInManager(context.GetUserManager<ApplicationUserManager>(), context.Authentication);
         }
+
+        internal Task PasswordSignInAsync(object username, string password, bool rememberMe, bool shouldLockout, object Username)
+        {
+            throw new NotImplementedException();
+        }
+
+        //internal Task PasswordSignInAsync(object username, string password, bool rememberMe, bool shouldLockout, object Username)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
