@@ -2,11 +2,53 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="~/Content/Images/slide-1.jpg" alt="We learn">
+            <div class="carousel-caption">
+                <span>We learn ASP.NET</span>
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/Content/Images/child-865116_1920.jpg" alt="Never Stop">
+            <div class="carousel-caption">
+                Never Stop !!
+            </div>
+        </div>
+
+        <div class="item">
+            <img src="~/Content/Images/workspace-1280538_1920.jpg" alt="We win">
+            <div class="carousel-caption">
+               WE win !!
+            </div>
+        </div>
+        ...
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+@*<div class="jumbotron">
     <h1>ASP.NET</h1>
     <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
     <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+</div>*@
 
 <div class="row">
     <div class="col-md-4">

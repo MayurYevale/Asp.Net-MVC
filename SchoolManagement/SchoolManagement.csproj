@@ -212,6 +212,9 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\slide-1.jpg" />
+    <Content Include="Content\Images\child-865116_1920.jpg" />
+    <Content Include="Content\Images\workspace-1280538_1920.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

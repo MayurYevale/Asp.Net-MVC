@@ -13,6 +13,7 @@
     <EntitySetMapping Name="Students">
       <EntityTypeMapping TypeName="SchoolManagement_DBModel.Student">
         <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
           <ScalarProperty Name="StudentID" ColumnName="StudentID" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />

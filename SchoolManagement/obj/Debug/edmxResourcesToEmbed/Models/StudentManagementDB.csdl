@@ -18,6 +18,7 @@
     <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="EnrollmentDate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Tables" Relationship="Self.FK_dbo_Enrollment_dbo_Student_StudentID" FromRole="Student" ToRole="Table" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Table">
     <Key>
