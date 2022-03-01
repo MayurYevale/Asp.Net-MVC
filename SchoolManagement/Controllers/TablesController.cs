@@ -66,6 +66,29 @@ namespace SchoolManagement.Controllers
             return View(table);
         }
 
+        [HttpPost]
+        public async Task<JsonResult> AddStudent([Bind(Include = "CourseID,StudentID")] Table table) {
+            try
+            {
+                var IsEnrolled = db.Tables.Any(q => q.CourseID == table.CourseID && q.StudentID == table.StudentID) ;// to check if already added
+
+                if (ModelState.IsValid && !IsEnrolled)
+                {
+                    db.Tables.Add(table);
+                    await db.SaveChangesAsync();
+                    return Json(new { IsSuccess = true, Message = "Student Added Successfully"},JsonRequestBehavior.AllowGet);
+                }
+                return Json(new { IsSuccess = false, Message = "Student is Already Added " }, JsonRequestBehavior.AllowGet);
+
+            }
+            catch (Exception)
+            {
+                return Json(new { IsSuccess = false, Message = "System failure: Please Contact Administrator ; " }, JsonRequestBehavior.AllowGet);
+
+
+            }
+        }
+
         // GET: Tables/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
